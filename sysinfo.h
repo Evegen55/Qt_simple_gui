@@ -8,13 +8,6 @@ public:
     static SysInfo& instance();
     virtual ~SysInfo();
 
-protected:
-    explicit SysInfo();
-
-private:
-    SysInfo(const SysInfo& rhs);
-    SysInfo& operator=(const SysInfo& rhs);
-
     /**
      * This function allows the derived class to perform any initialization
      * process depending on the OS platform
@@ -37,6 +30,13 @@ private:
      * @return
      */
     virtual double memoryUsed() = 0;
+
+protected:
+    explicit SysInfo();
+
+private:
+    SysInfo(const SysInfo& rhs); //copy constructor
+    SysInfo& operator=(const SysInfo& rhs);
 };
 
 #endif // SYSINFO_H

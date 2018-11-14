@@ -4,7 +4,7 @@
 #
 #-------------------------------------------------
 
-QT       += core gui
+QT       += core gui charts
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -24,24 +24,24 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 CONFIG += c++14
 
+HEADERS += \
+        mainwindow.h \
+    sysinfo.h \
+    sysinfowidget.h \
+    cpuwidget.h
+
 SOURCES += \
         main.cpp \
         mainwindow.cpp \
-    sysinfo.cpp
+    sysinfo.cpp \
+    sysinfowidget.cpp \
+    cpuwidget.cpp
 
-HEADERS += \
-        mainwindow.h \
-    sysinfo.h
-
-FORMS += \
-        mainwindow.ui
 
 linux {
     SOURCES += sysinfolinuximpl.cpp
     HEADERS += sysinfolinuximpl.h
 }
 
-# Default rules for deployment.
-qnx: target.path = /tmp/$${TARGET}/bin
-else: unix:!android: target.path = /opt/$${TARGET}/bin
-!isEmpty(target.path): INSTALLS += target
+
+FORMS    += mainwindow.ui
