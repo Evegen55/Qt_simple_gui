@@ -3,6 +3,9 @@
 
 #include "sysinfo.h"
 
+#include <QPushButton>
+#include <QPropertyAnimation>
+
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow()),
@@ -10,10 +13,7 @@ MainWindow::MainWindow(QWidget *parent) :
 {
     ui->setupUi(this);
     SysInfo::instance().init();
-
-//    this->setCentralWidget(&mCpuWidget);
     ui->centralWidget->layout()->addWidget(&mCpuWidget);
-
 }
 
 MainWindow::~MainWindow()

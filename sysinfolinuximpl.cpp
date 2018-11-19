@@ -41,7 +41,7 @@ double SysInfoLinuxImpl::cpuLoadAverage()
             + (secondSample[1] - firstSample[1])
             + (secondSample[2] - firstSample[2]);
     double total = overall + (secondSample[3] - firstSample[3]);
-    double percent = (overall / total) * 100.0;
+    double percent = (overall / total) * 100.0;   
     return qBound(0.0, percent, 100.0);
 }
 
