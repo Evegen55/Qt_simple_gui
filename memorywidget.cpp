@@ -26,4 +26,11 @@ MemoryWidget::MemoryWidget(QWidget* parent) :
 
 void MemoryWidget::updateSeries()
 {
+    double memoryUsed = SysInfo::instance().memoryUsed();
+    mSeries->append(mPointPositionX++, memoryUsed);
+    if (mSeries->count() > CHART_X_RANGE_COUNT) {
+        QChart* chart = chartView().chart();
+        chart->scroll(chart->plotArea().width() / CHART_X_RANGE_MAX, 0);
+        mSeries->remove(0);
+    }
 }
