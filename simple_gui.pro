@@ -28,14 +28,16 @@ HEADERS += \
         mainwindow.h \
     sysinfo.h \
     sysinfowidget.h \
-    cpuwidget.h
+    cpuwidget.h \
+    memorywidget.h
 
 SOURCES += \
         main.cpp \
         mainwindow.cpp \
     sysinfo.cpp \
     sysinfowidget.cpp \
-    cpuwidget.cpp
+    cpuwidget.cpp \
+    memorywidget.cpp
 
 
 linux {
